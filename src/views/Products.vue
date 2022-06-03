@@ -2,8 +2,14 @@
   <div class="header">
     <div class="content">
     <div class="body">
-      <div class="search">
-    <input type="text" v-model="search" placeholder="search"/>
+      <div class="shapka">
+        <p class="prod">Products</p>
+      </div>
+      <div class="search d4">
+     <form>    
+       <input  type="text" v-model="search" placeholder="search"/>
+         <button type="submit"><font-awesome-icon icon="fa-solid fa-magnifying-glass" /></button>
+         </form>   
     </div>
     <div v-if="fetching" class="loading">Loading...</div>
     <div v-else-if="error" class="error">Oh no... {{ error }}</div>
@@ -71,6 +77,47 @@ export default {
 </script>
 
 <style scoped>
+/* .d4 {background: #F15B42;} */
+.d4 form {
+  background: #fffffe;
+  border-bottom: 4px solid #d9dcd9;
+}
+.d4 input, .d4 button {
+  /* border: none; */
+  outline: none;
+  background: transparent;
+}
+.d4 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.d4 button {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+    top: 444px;
+    right: 180px;
+  cursor: pointer;
+}
+.d4 button:before {
+  content: "\f178";
+  font-family: FontAwesome;
+  font-size: 20px;
+  color: #be290e;
+}
+.shapka{
+  background-image: url("https://ltdfoto.ru/images/2022/06/03/SNIMOK-EKRANA-25cd023ecaf1f94ac.png");
+    height: 380px;
+    width: 980px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.prod{display: flex;
+    flex-direction: row-reverse;
+    padding: 11%;
+    font-size: 450%;
+}
 .header {
   width: 1200px;
   margin: 0 auto;
@@ -93,7 +140,7 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    width: 100%;
+    width: 74%;
     margin: 3%;
 }
 .products {
@@ -109,7 +156,7 @@ export default {
   margin: 1%;
   border: #00000059 solid 1px;
   border-radius: 5%;
-  box-shadow:0 0 10px 5px rgb(180, 192, 212);
+      box-shadow: inset 0 0 10px 5px rgb(214 216 211);
   text-align: left;
 }
 .product_card:hover {
